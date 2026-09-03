@@ -10,6 +10,7 @@ import { property } from "@/sanity/schemas/property";
 import { settings } from "@/sanity/schemas/settings";
 import { testimonial } from "@/sanity/schemas/testimonial";
 import { contentBlock } from "@/sanity/schemas/objects";
+import { lead } from "@/sanity/schemas/lead";
 
 export const schemaTypes = [
   contentBlock,
@@ -19,6 +20,7 @@ export const schemaTypes = [
   category,
   amenity,
   agent,
+  lead,
   testimonial,
   homepage,
   settings,

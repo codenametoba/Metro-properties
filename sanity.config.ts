@@ -3,6 +3,7 @@ import { structureTool } from "sanity/structure";
 import { visionTool } from "@sanity/vision";
 import { apiVersion, dataset, projectId } from "@/sanity/env";
 import { schemaTypes } from "@/sanity/schemas";
+import { deskStructure } from "@/sanity/deskStructure";
 
 export default defineConfig({
   name: "metro-properties",
@@ -11,6 +12,6 @@ export default defineConfig({
   dataset,
   apiVersion,
   basePath: "/studio",
-  plugins: [structureTool(), visionTool()],
+  plugins: [structureTool({ structure: deskStructure }), visionTool()],
   schema: { types: schemaTypes }
 });
