@@ -49,7 +49,7 @@ const propertyProjection = `{
 }`;
 
 async function fetchOrDemo<T>(query: string, params: Record<string, unknown>, demo: T): Promise<T> {
-  if (!hasSanityConfig && useDemoContent) return demo;
+  if (!hasSanityConfig) return demo;
   try {
     return await sanityClient.fetch<T>(query, params, { next: { revalidate: 60 } });
   } catch {
