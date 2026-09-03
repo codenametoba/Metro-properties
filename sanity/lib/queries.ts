@@ -53,8 +53,7 @@ async function fetchOrDemo<T>(query: string, params: Record<string, unknown>, de
   try {
     return await sanityClient.fetch<T>(query, params, { next: { revalidate: 60 } });
   } catch {
-    if (useDemoContent) return demo;
-    throw new Error("Sanity is not configured. Add NEXT_PUBLIC_SANITY_PROJECT_ID and dataset values.");
+    return demo;
   }
 }
 
